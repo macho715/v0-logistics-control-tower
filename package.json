@@ -7,6 +7,9 @@
     "dev": "python -m http.server 3000",
     "start": "echo 'Static site ready'"
   },
+  "pnpm": {
+    "onlyBuiltDependencies": []
+  },
   "dependencies": {
     "@hookform/resolvers": "^3.10.0",
     "@radix-ui/react-accordion": "1.2.2",
