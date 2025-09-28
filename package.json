@@ -1,12 +1,11 @@
 {
-  "name": "my-v0-project",
+  "name": "weather-vessel-static",
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "build": "next build",
-    "dev": "next dev",
-    "lint": "next lint",
-    "start": "next start"
+    "build": "echo 'Static site - no build needed'",
+    "dev": "python -m http.server 3000",
+    "start": "echo 'Static site ready'"
   },
   "dependencies": {
     "@hookform/resolvers": "^3.10.0",

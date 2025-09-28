@@ -1,5 +1,6 @@
 {
   "version": 2,
+  "name": "weather-vessel-static",
   "builds": [
     {
       "src": "public/logistics-app.html",
@@ -12,8 +13,14 @@
       "dest": "/public/logistics-app.html"
     },
     {
+      "src": "/index.html",
+      "dest": "/public/logistics-app.html"
+    },
+    {
       "src": "/(.*)",
       "dest": "/public/$1"
     }
-  ]
+  ],
+  "functions": {},
+  "buildCommand": "echo 'Static deployment - no build needed'"
 }

@@ -1,0 +1,11 @@
+.next
+node_modules
+app
+components
+lib
+styles
+tsconfig.json
+next.config.mjs
+postcss.config.mjs
+tailwind.config.ts
+components.json
