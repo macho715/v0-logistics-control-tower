@@ -5,7 +5,7 @@
   "scripts": {
     "build": "echo 'Static site - no build needed'",
     "dev": "python -m http.server 3000",
-    "start": "echo 'Static site ready'"
+    "start": "python -m http.server 8000"
   },
   "pnpm": {
     "onlyBuiltDependencies": []
