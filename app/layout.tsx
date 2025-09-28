@@ -1,47 +1,42 @@
-import type { Metadata } from "next";
-import "./globals.css";
+import type { Metadata } from "next"
+import "./globals.css"
+import {
+  Geist as V0_Font_Geist,
+  Geist_Mono as V0_Font_Geist_Mono,
+  Source_Serif_4 as V0_Font_Source_Serif_4,
+} from 'next/font/google'
 
-// Font imports (adjust paths as needed)
-import { 
-  V0_Font_Geist, 
-  V0_Font_Geist_Mono, 
-  V0_Font_Source_Serif_4 
-} from "./fonts"; // or wherever your fonts are imported from
+// ✅ 폰트 로더를 const에 할당
+const fontGeist = V0_Font_Geist({
+  subsets: ['latin'],
+  variable: '--font-geist',
+  weight: ['100','200','300','400','500','600','700','800','900'],
+})
 
-// ✅ FIX: Initialize fonts and assign to const variables
-const geist = V0_Font_Geist({ 
-  weight: ["100","200","300","400","500","600","700","800","900"],
-  subsets: ["latin"],
-  variable: "--font-geist"
-});
+const fontGeistMono = V0_Font_Geist_Mono({
+  subsets: ['latin'],
+  variable: '--font-geist-mono',
+  weight: ['100','200','300','400','500','600','700','800','900'],
+})
 
-const geistMono = V0_Font_Geist_Mono({ 
-  weight: ["100","200","300","400","500","600","700","800","900"],
-  subsets: ["latin"],
-  variable: "--font-geist-mono"
-});
-
-const sourceSerif = V0_Font_Source_Serif_4({ 
-  weight: ["200","300","400","500","600","700","800","900"],
-  subsets: ["latin"],
-  variable: "--font-source-serif"
-});
+const fontSourceSerif = V0_Font_Source_Serif_4({
+  subsets: ['latin'],
+  variable: '--font-source-serif-4',
+  weight: ['200','300','400','500','600','700','800','900'],
+})
 
 export const metadata: Metadata = {
-  title: "Logistics Control Tower v2.5",
-  description: "Advanced logistics management and monitoring system",
-};
+  title: 'Logistics Control Tower v2.5',
+  description: 'Weather-aware vessel schedule dashboard',
+}
 
-export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
+export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en">
-      <body className={`${geist.variable} ${geistMono.variable} ${sourceSerif.variable} antialiased`}>
-        {children}
-      </body>
+    <html
+      lang="en"
+      className={`${fontGeist.variable} ${fontGeistMono.variable} ${fontSourceSerif.variable}`}
+    >
+      <body>{children}</body>
     </html>
-  );
+  )
 }
